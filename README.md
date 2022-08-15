@@ -1,6 +1,6 @@
 # DMALAX - Discrete Metropolis-Adjusted Langevin Algorithm in JAX
 
-This repository contains for the [JAX](https://github.com/google/jax) based implementation of the work by __Zhang et.al 2022 titled [A Langevin-like Sampler for Discrete Distributions](https://arxiv.org/pdf/2206.09914.pdf)__. It's design is heavily insipred by [blackjax](https://github.com/blackjax-devs/blackjax/) even borrowing some code from the api. (_I implemented this code in a separate repo as part of learning how samplers for discrete distributions work, and I plan to send a PR to the official blackjax repo :crossed_fingers:_)
+This repository contains  the code for the [JAX](https://github.com/google/jax) based implementation of the work by __Zhang et.al 2022 titled [A Langevin-like Sampler for Discrete Distributions](https://arxiv.org/pdf/2206.09914.pdf)__. It's design is heavily insipred by [blackjax](https://github.com/blackjax-devs/blackjax/) even borrowing some code from the api. (_I implemented this code in a separate repo as part of learning how samplers for discrete distributions work, and I plan to send a PR to the official blackjax repo :crossed_fingers:_)
 
 ## Usage
 
