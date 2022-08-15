@@ -14,3 +14,7 @@ Please check the notebooks in `examples` directory for how to use the kernel
   - Potts Model
   - Restricted-Boltzmann Machine (RBM) Model
   - Bayesian Neural Network (BNN)
+
+## Other versions
+
+You can find the PyTorch implementation of the paper written by the authors themselves here -> https://github.com/ruqizhang/discrete-langevin/
