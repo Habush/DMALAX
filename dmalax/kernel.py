@@ -1,8 +1,8 @@
 
 from typing import Callable
-from .types import PyTree, PRNGKey
-from .base import SamplingAlgorithm
-import mcmc
+from dmalax.types import PyTree, PRNGKey
+from dmalax.base import SamplingAlgorithm
+import dmalax.mcmc as mcmc
 
 
 class dmala:
@@ -68,7 +68,7 @@ class dmala:
 class sgdld:
     """Implements the (basic) user interface for the SGDLD kernel.
 
-    The general sgdld kernel (:meth:`blackjax.mcmc.sgdld.kernel`, alias `blackjax.sgdld.kernel`) can be
+    The general sgdld kernel (:meth:`dmalax.mcmc.sgdld.kernel`, alias `dmalax.sgdld.kernel`) can be
     cumbersome to manipulate. Since most users only need to specify the kernel
     parameters at initialization time, we provide a helper function that
     specializes the general kernel.
@@ -85,17 +85,11 @@ class sgdld:
         schedule_fn = lambda _: 1e-3
         grad_fn = blackjax.sgmcmc.gradients.grad_estimator(logprior_fn, loglikelihood_fn, data_size)
 
-    We can now initialize the sgdld kernel and the state:
+    We can now initialize the sgdld kernel and the state, assuming we have an iterator `batches` that yields batches of data we can perform one step:
 
     .. code::
-
-        sgdld = blackjax.sgdld(grad_fn, schedule_fn)
-        state = sgdld.init(position)
-
-    Assuming we have an iterator `batches` that yields batches of data we can perform one step:
-
-    .. code::
-
+        sgdld = dmalax.sgdld(grad_fn, schedule_fn)
+        state = dmalax.init(position, data_batch)
         data_batch = next(batches)
         new_state = sgdld.step(rng_key, state, data_batch)
 
