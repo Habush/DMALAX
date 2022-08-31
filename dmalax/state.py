@@ -2,7 +2,7 @@
 from typing import NamedTuple
 from dmalax.types import PyTree, PRNGKey
 
-__all__ = ["MALAState", "MALAInfo"]
+__all__ = ["MALAState", "MALAInfo", "SGLDState"]
 
 
 class MALAState(NamedTuple):
@@ -36,3 +36,11 @@ class MALAInfo(NamedTuple):
 
     acceptance_probability: float
     is_accepted: bool
+
+
+class SGLDState(NamedTuple):
+    step: int
+    position: PyTree
+    logprob_grad: PyTree
+
+
