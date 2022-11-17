@@ -64,7 +64,7 @@ def kernel():
         theta_new = pos_new * a + theta_cur * (1. - a)
         logprob_theta_new = logprob_fn(theta_new)
         grad_theta_new = grad_fn(theta_new)
-        new_state = MALAState(pos_new, logprob_theta_new, grad_theta_new)
+        new_state = MALAState(theta_new, logprob_theta_new, grad_theta_new)
         info = MALAInfo(jnp.mean(a), jnp.mean(a) > 0)
 
         return (new_state, info)
